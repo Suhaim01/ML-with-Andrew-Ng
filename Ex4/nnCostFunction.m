@@ -1,3 +1,6 @@
+% Code is incomplete in part2
+
+
 function [J grad] = nnCostFunction(nn_params, ...
                                    input_layer_size, ...
                                    hidden_layer_size, ...
@@ -103,7 +106,7 @@ delt2 = delt2(2:end, :);         %extra layer of ones removed
 
 
 Theta2_grad =  Theta2_grad + delt3 * a2(i, :); % 10 X hidden+1
-Theta1_grad =  Theta1_grad  + delt2 * a1; % hidden X n+1
+Theta1_grad =  Theta1_grad  + delt2 * a1; 
 
 endfor
 
