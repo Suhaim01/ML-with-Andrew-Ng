@@ -1,4 +1,4 @@
-% Code is incomplete in part2
+% Code incomplete in labelled part2 of the function
 
 
 function [J grad] = nnCostFunction(nn_params, ...
