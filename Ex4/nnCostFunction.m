@@ -1,6 +1,3 @@
-% Code incomplete in labelled part2 of the function
-
-
 function [J grad] = nnCostFunction(nn_params, ...
                                    input_layer_size, ...
                                    hidden_layer_size, ...
@@ -85,6 +82,14 @@ for i = 1: num_labels
 
 endfor
 
+% regularizing cfunction
+
+Reg = lambda  * (sum( sum ( t1.^ 2 )) + sum( sum ( t2.^ 2 ))) / (2*m);
+
+J = J + Reg;
+
+
+
 
 %PART 2
 
@@ -113,15 +118,10 @@ endfor
 Theta1_grad  = Theta1_grad./ m;
 Theta2_grad  = Theta2_grad./ m;
 
-% add regularization
+% Part 3
+
 Theta1_grad(:, 2:end) = Theta1_grad + lambda * (1 / m) * Theta1(:, 2:end);
 Theta2_grad(:, 2:end) = Theta2_grad + lambda * (1 / m) * Theta2(:, 2:end);
-
-
-
-
-
-
 
 
 
